@@ -1,0 +1,90 @@
+
+<script>
+
+    function computerChoice (){
+
+        let numChoice = Math.floor(Math.random()*3);
+
+        if (numChoice == 0){
+            return "rock";
+        }
+        else if (numChoice == 1){
+            return "paper";
+        }
+        else return "scissors";
+
+    }
+
+    function playRound(){
+
+        let comChoice = computerChoice();   
+
+        let playerChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
+        
+        if (playerChoice == comChoice) {
+
+            return "Draw!"
+        }
+        else if (playerChoice == "rock"){
+            if (comChoice == "paper"){
+                return "Player Wins!"
+            }
+            else return "Computer Wins!";
+        }
+        else if (playerChoice == "paper"){
+            if (comChoice == "rock"){
+                return "Player Wins!"
+            }
+            else return "Computer Wins!";
+        }
+        else{
+            
+            if (comChoice == "paper"){
+                return "Player Wins!"
+            }
+            else return "Computer Wins!";
+        }
+
+    }
+
+    function playGame(){
+
+        let comScore = 0;
+        let playScore = 0;
+
+        for (let i=0; i<=4; i++) {
+
+            console.log("Round "+(i+1)+"!");
+
+            result = playRound();
+            console.log(result);
+
+            if (result == "Computer Wins!") {
+
+                comScore++;
+
+            }
+            else if (result == "Player Wins!") {
+
+                playScore++;
+
+            }
+        }
+
+        if (comScore>playScore){
+
+            console.log("Computer wins "+comScore+" to "+playScore);
+
+        }
+        else if (playScore>comScore){
+            console.log("Player wins "+playScore+" to "+comScore);
+        }
+        else{
+            console.log("Draw!");
+        }
+
+    }
+
+
+</script>
+
