@@ -1,90 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/scripts.js"></script>
+</head>
 
-<script>
+<body>
 
-    function computerChoice (){
-
-        let numChoice = Math.floor(Math.random()*3);
-
-        if (numChoice == 0){
-            return "rock";
-        }
-        else if (numChoice == 1){
-            return "paper";
-        }
-        else return "scissors";
-
-    }
-
-    function playRound(){
-
-        let comChoice = computerChoice();   
-
-        let playerChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
-        
-        if (playerChoice == comChoice) {
-
-            return "Draw!"
-        }
-        else if (playerChoice == "rock"){
-            if (comChoice == "paper"){
-                return "Player Wins!"
-            }
-            else return "Computer Wins!";
-        }
-        else if (playerChoice == "paper"){
-            if (comChoice == "rock"){
-                return "Player Wins!"
-            }
-            else return "Computer Wins!";
-        }
-        else{
-            
-            if (comChoice == "paper"){
-                return "Player Wins!"
-            }
-            else return "Computer Wins!";
-        }
-
-    }
-
-    function playGame(){
-
-        let comScore = 0;
-        let playScore = 0;
-
-        for (let i=0; i<=4; i++) {
-
-            console.log("Round "+(i+1)+"!");
-
-            result = playRound();
-            console.log(result);
-
-            if (result == "Computer Wins!") {
-
-                comScore++;
-
-            }
-            else if (result == "Player Wins!") {
-
-                playScore++;
-
-            }
-        }
-
-        if (comScore>playScore){
-
-            console.log("Computer wins "+comScore+" to "+playScore);
-
-        }
-        else if (playScore>comScore){
-            console.log("Player wins "+playScore+" to "+comScore);
-        }
-        else{
-            console.log("Draw!");
-        }
-
-    }
+    <div class="container">
+        <div class="column-container">
+            <img src="/img/rock.png">
+            <button id="rock">ROCK</button>
+        </div>
+        <div class="column-container">
+            <img src="/img/paper.png">
+            <button id="paper">PAPER</button>
+        </div>
+        <div class="column-container">
+            <img src="/img/scissors.png">
+            <button id="scissors">SCISSORS</button>
+        </div>
+    </div>
 
 
-</script>
-
+    <div id="output">
+    </div>
+    
+</body>
+</html>
